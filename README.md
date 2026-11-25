@@ -2,6 +2,8 @@
 
 虚拟支付订单系统的粗糙版。
 
+当前版本：`v1.0`
+
 当前版本只做最小闭环：注册登录、JWT、记住我、用户购买 token 套餐、管理员维护套餐和查看订单。后面再逐步演进到稳定、高性能、高可用。
 
 ## 当前功能
@@ -116,6 +118,22 @@ npm run build
 | POST | `/api/admin/products` | 新增套餐 |
 | PUT | `/api/admin/products/{id}` | 修改套餐 |
 | GET | `/api/admin/orders` | 全部订单 |
+
+## 验收记录
+
+v1.0 浏览器操作日志已经归档：
+
+- [PayOps v1.0 浏览器操作日志](docs/acceptance/v1.0/browser-operation-log.md)
+- [结构化执行结果](docs/acceptance/v1.0/run-results.json)
+- 截图目录：`docs/acceptance/v1.0/screenshots/`
+
+复现浏览器验收：
+
+```bash
+cd e2e
+npm install
+npm run acceptance
+```
 
 ## 当前边界
 

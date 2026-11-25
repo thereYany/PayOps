@@ -1,0 +1,272 @@
+[
+  {
+    "id": "ADM-01",
+    "role": "管理员",
+    "title": "打开登录页",
+    "expected": "显示登录/注册表单和管理员演示提示",
+    "result": "PASS",
+    "actual": "登录页正常加载",
+    "evidence": "screenshots/01-admin-login-page.png",
+    "startedAt": "2026-11-25T21:45:14.504Z"
+  },
+  {
+    "id": "ADM-02",
+    "role": "管理员",
+    "title": "管理员登录",
+    "expected": "登录成功并进入管理后台",
+    "result": "PASS",
+    "actual": "后台统计：1 / 3 / 0",
+    "evidence": "screenshots/02-admin-dashboard.png",
+    "startedAt": "2026-11-25T21:45:15.031Z"
+  },
+  {
+    "id": "ADM-03",
+    "role": "管理员",
+    "title": "查看用户和全部订单",
+    "expected": "管理后台展示用户列表、套餐列表和全部订单",
+    "result": "PASS",
+    "actual": "用户 1 行，订单 0 行",
+    "evidence": "screenshots/03-admin-users-orders.png",
+    "startedAt": "2026-11-25T21:45:15.548Z"
+  },
+  {
+    "id": "ADM-04",
+    "role": "管理员",
+    "title": "新增套餐",
+    "expected": "新增 20 元 token 套餐，售价 17.00，到账 20.00 token",
+    "result": "PASS",
+    "actual": "20 元 token / ¥17.00 / 20.00 token / 上架",
+    "evidence": "screenshots/04-admin-create-product.png",
+    "startedAt": "2026-11-25T21:45:15.833Z"
+  },
+  {
+    "id": "ADM-05",
+    "role": "管理员",
+    "title": "编辑套餐",
+    "expected": "套餐名称改为 20 元 token（活动），售价改为 16.00",
+    "result": "PASS",
+    "actual": "20 元 token（活动） / ¥16.00 / 20.00 token / 上架",
+    "evidence": "screenshots/05-admin-edit-product.png",
+    "startedAt": "2026-11-25T21:45:16.240Z"
+  },
+  {
+    "id": "ADM-06",
+    "role": "管理员",
+    "title": "停用套餐",
+    "expected": "20 元 token（活动）状态变为停用",
+    "result": "PASS",
+    "actual": "套餐状态：停用",
+    "evidence": "screenshots/06-admin-disable-product.png",
+    "startedAt": "2026-11-25T21:45:16.639Z"
+  },
+  {
+    "id": "ADM-07",
+    "role": "管理员",
+    "title": "重新上架套餐",
+    "expected": "20 元 token（活动）状态恢复为上架",
+    "result": "PASS",
+    "actual": "套餐状态：上架",
+    "evidence": "screenshots/07-admin-enable-product.png",
+    "startedAt": "2026-11-25T21:45:17.051Z"
+  },
+  {
+    "id": "ADM-08",
+    "role": "管理员",
+    "title": "清理测试套餐",
+    "expected": "测试套餐再次停用，商城只保留三个默认套餐",
+    "result": "PASS",
+    "actual": "测试套餐已停用",
+    "evidence": "screenshots/08-admin-cleanup-product.png",
+    "startedAt": "2026-11-25T21:45:17.450Z"
+  },
+  {
+    "id": "ADM-09",
+    "role": "管理员",
+    "title": "管理员退出",
+    "expected": "退出后回到登录页",
+    "result": "PASS",
+    "actual": "当前页面：/login",
+    "evidence": "screenshots/09-admin-logout.png",
+    "startedAt": "2026-11-25T21:45:17.844Z"
+  },
+  {
+    "id": "USR-01",
+    "role": "用户",
+    "title": "打开注册表单",
+    "expected": "切换到注册页，显示用户名、密码、确认密码",
+    "result": "PASS",
+    "actual": "注册表单已显示",
+    "evidence": "screenshots/10-user-register-form.png",
+    "startedAt": "2026-11-25T21:45:18.254Z"
+  },
+  {
+    "id": "USR-02",
+    "role": "用户",
+    "title": "注册用户 A",
+    "expected": "注册 qa_user_a 成功，提示赠送 ¥10.00",
+    "result": "PASS",
+    "actual": "qa_user_a 注册成功，自动切回登录页",
+    "evidence": "screenshots/11-user-register-success.png",
+    "startedAt": "2026-11-25T21:45:18.654Z"
+  },
+  {
+    "id": "USR-03",
+    "role": "用户",
+    "title": "勾选记住我",
+    "expected": "登录表单已填写 qa_user_a，并勾选 7 天免登录",
+    "result": "PASS",
+    "actual": "账号已填写，记住我已勾选",
+    "evidence": "screenshots/12-user-login-remember.png",
+    "startedAt": "2026-11-25T21:45:19.176Z"
+  },
+  {
+    "id": "USR-04",
+    "role": "用户",
+    "title": "用户 A 登录商城",
+    "expected": "登录成功，余额 ¥10.00，token 0.00，显示三个套餐",
+    "result": "PASS",
+    "actual": "¥10.00 / 0.00 / 0，套餐 3 个",
+    "evidence": "screenshots/13-user-shop.png",
+    "startedAt": "2026-11-25T21:45:19.590Z"
+  },
+  {
+    "id": "USR-05",
+    "role": "用户",
+    "title": "购买 1 元 token",
+    "expected": "扣款 ¥0.95，token 到账 1.00，生成一条订单",
+    "result": "PASS",
+    "actual": "¥9.05 / 1.00 / 1，订单 1 条",
+    "evidence": "screenshots/14-user-buy-1.png",
+    "startedAt": "2026-11-25T21:45:19.988Z"
+  },
+  {
+    "id": "USR-06",
+    "role": "用户",
+    "title": "购买 5 元 token",
+    "expected": "扣款 ¥4.50，token 累计 6.00，生成第二条订单",
+    "result": "PASS",
+    "actual": "¥4.55 / 6.00 / 2，订单 2 条",
+    "evidence": "screenshots/15-user-buy-5.png",
+    "startedAt": "2026-11-25T21:45:20.356Z"
+  },
+  {
+    "id": "USR-07",
+    "role": "用户",
+    "title": "余额不足状态",
+    "expected": "10 元套餐按钮禁用，显示“余额不足”",
+    "result": "PASS",
+    "actual": "按钮状态：余额不足，disabled=true",
+    "evidence": "screenshots/16-user-insufficient-balance.png",
+    "startedAt": "2026-11-25T21:45:20.725Z"
+  },
+  {
+    "id": "USR-08",
+    "role": "用户",
+    "title": "查看我的订单",
+    "expected": "订单列表显示 1 元和 5 元两条已支付订单",
+    "result": "PASS",
+    "actual": "订单共 2 条",
+    "evidence": "screenshots/17-user-orders.png",
+    "startedAt": "2026-11-25T21:45:20.992Z"
+  },
+  {
+    "id": "USR-09",
+    "role": "用户",
+    "title": "刷新后保持登录",
+    "expected": "勾选记住我后，刷新页面仍停留在商城",
+    "result": "PASS",
+    "actual": "刷新后路径：/shop，余额 ¥4.55 / 6.00 / 2",
+    "evidence": "screenshots/18-user-remember-me.png",
+    "startedAt": "2026-11-25T21:45:21.268Z"
+  },
+  {
+    "id": "USR-10",
+    "role": "用户",
+    "title": "用户访问管理员页面",
+    "expected": "前端路由拦截，普通用户被重定向回商城",
+    "result": "PASS",
+    "actual": "访问 /admin 后被重定向到 /shop",
+    "evidence": "screenshots/19-user-admin-forbidden.png",
+    "startedAt": "2026-11-25T21:45:21.635Z"
+  },
+  {
+    "id": "USR-11",
+    "role": "用户",
+    "title": "用户 A 退出",
+    "expected": "退出后回到登录页",
+    "result": "PASS",
+    "actual": "当前页面：/login",
+    "evidence": "screenshots/20-user-a-logout.png",
+    "startedAt": "2026-11-25T21:45:21.975Z"
+  },
+  {
+    "id": "USR-12",
+    "role": "用户",
+    "title": "注册用户 B",
+    "expected": "注册 qa_user_b 成功",
+    "result": "PASS",
+    "actual": "qa_user_b 注册成功",
+    "evidence": "screenshots/21-user-b-register.png",
+    "startedAt": "2026-11-25T21:45:22.354Z"
+  },
+  {
+    "id": "USR-13",
+    "role": "用户",
+    "title": "用户 B 不勾选记住我登录",
+    "expected": "登录成功，记住我未勾选",
+    "result": "PASS",
+    "actual": "用户 B 登录成功，记住我=false",
+    "evidence": "screenshots/22-user-b-login.png",
+    "startedAt": "2026-11-25T21:45:22.868Z"
+  },
+  {
+    "id": "USR-14",
+    "role": "用户",
+    "title": "购买 10 元 token",
+    "expected": "扣款 ¥8.50，token 到账 10.00，余额剩 ¥1.50",
+    "result": "PASS",
+    "actual": "¥1.50 / 10.00 / 1，订单 1 条",
+    "evidence": "screenshots/23-user-b-buy-10.png",
+    "startedAt": "2026-11-25T21:45:23.288Z"
+  },
+  {
+    "id": "USR-15",
+    "role": "用户",
+    "title": "会话存储刷新验证",
+    "expected": "未勾选记住我时，刷新当前标签页仍保持登录",
+    "result": "PASS",
+    "actual": "刷新后路径：/shop，余额 ¥1.50 / 10.00 / 1",
+    "evidence": "screenshots/24-user-b-session-reload.png",
+    "startedAt": "2026-11-25T21:45:23.666Z"
+  },
+  {
+    "id": "USR-16",
+    "role": "用户",
+    "title": "用户 B 退出",
+    "expected": "退出后回到登录页",
+    "result": "PASS",
+    "actual": "当前页面：/login",
+    "evidence": "screenshots/25-user-b-logout.png",
+    "startedAt": "2026-11-25T21:45:24.034Z"
+  },
+  {
+    "id": "USR-17",
+    "role": "用户",
+    "title": "重复用户名注册",
+    "expected": "注册 qa_user_a 时提示“用户名已存在”",
+    "result": "PASS",
+    "actual": "页面提示：用户名已存在",
+    "evidence": "screenshots/26-user-duplicate-register.png",
+    "startedAt": "2026-11-25T21:45:24.434Z"
+  },
+  {
+    "id": "USR-18",
+    "role": "用户",
+    "title": "错误密码登录",
+    "expected": "提示“用户名或密码错误”",
+    "result": "PASS",
+    "actual": "页面提示：用户名或密码错误",
+    "evidence": "screenshots/27-user-wrong-password.png",
+    "startedAt": "2026-11-25T21:45:24.896Z"
+  }
+]
