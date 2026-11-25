@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:payops;MODE=MySQL;DB_CLOSE_DELAY=-1;DATABASE_TO_LOWER=TRUE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    open-in-view: false
+
+app:
+  jwt:
+    secret: test-secret-key-0123456789abcdef0123456789abcdef
+    default-ttl: 2h
+    remember-me-ttl: 7d
+  admin:
+    username: admin
+    password: admin123

@@ -1,0 +1,29 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: payops-backend
+  datasource:
+    url: ${DB_URL:jdbc:mysql://localhost:3306/payops?useUnicode=true&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Shanghai}
+    username: ${DB_USERNAME:payops}
+    password: ${DB_PASSWORD:payops}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: Asia/Shanghai
+  jackson:
+    time-zone: Asia/Shanghai
+
+app:
+  jwt:
+    secret: ${JWT_SECRET:payops-dev-secret-key-please-change-0123456789abcdef}
+    default-ttl: 2h
+    remember-me-ttl: 7d
+  admin:
+    username: ${ADMIN_USERNAME:admin}
+    password: ${ADMIN_PASSWORD:admin123}
